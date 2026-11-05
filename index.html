@@ -3,781 +3,378 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CATNP COFFEE | Donde cada café salva una vida</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
+<title>CATNP COFFEE - Donde cada café salva una vida</title>
 <style>
-:root {
-  --pink: #f7c6c3;
-  --pink-light: #fff0ed;
-  --cream: #fff8ed;
-  --brown: #765344;
-  --brown-dark: #54392f;
-  --peach: #e9a99c;
-  --green: #b8c9a9;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: var(--cream);
-  color: var(--brown);
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* NAVBAR */
-
-header {
-  background: rgba(255,248,237,.96);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 2px solid var(--pink);
-  backdrop-filter: blur(10px);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--brown-dark);
-}
-
-.logo span {
-  color: var(--peach);
-}
-
-.logo small {
-  display: block;
-  font-size: .65rem;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  font-weight: 700;
-  transition: .3s;
-}
-
-nav a:hover {
-  color: var(--peach);
-}
-
-/* PORTADA */
-
-.hero {
-  min-height: 570px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:
-    radial-gradient(circle at 15% 20%, #f8d4ce 0 8%, transparent 9%),
-    radial-gradient(circle at 85% 75%, #f5d9cb 0 9%, transparent 10%),
-    linear-gradient(135deg, #fff0ed, #f6dfd1, #fff5e9);
-  padding: 100px 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-  animation: aparecer 1.2s ease;
-}
-
-.hero-cat {
-  font-size: 65px;
-  animation: flotar 3s infinite ease-in-out;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  color: var(--brown-dark);
-  line-height: 1.1;
-}
-
-.hero h1 span {
-  color: #d99188;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin: 20px auto;
-  max-width: 650px;
-  font-weight: 600;
-}
-
-.slogan {
-  color: #bc8177;
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin: 25px 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 15px 32px;
-  background: #d9948b;
-  color: white;
-  border-radius: 40px;
-  font-weight: 800;
-  transition: .3s;
-  box-shadow: 0 5px 15px #d9948b55;
-}
-
-.btn:hover {
-  background: var(--brown);
-  transform: translateY(-5px);
-}
-
-.decor {
-  position: absolute;
-  font-size: 35px;
-  animation: flotar 4s infinite ease-in-out;
-}
-
-.decor.one { top: 15%; left: 10%; }
-.decor.two { bottom: 15%; right: 10%; }
-.decor.three { top: 25%; right: 15%; }
-
-/* SECCIONES */
-
-section {
-  padding: 85px 0;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  text-align: center;
-  margin-bottom: 15px;
-  color: var(--brown-dark);
-}
-
-.section-subtitle {
-  text-align: center;
-  margin-bottom: 45px;
-  font-weight: 600;
-  color: #a47a68;
-}
-
-/* IDENTIDAD */
-
-.values {
-  background: #fff8ed;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-}
-
-.value-card {
-  background: #fff0ed;
-  padding: 35px 25px;
-  border: 2px solid #f2d1c9;
-  border-radius: 25px;
-  text-align: center;
-  transition: .4s;
-}
-
-.value-card:hover {
-  transform: translateY(-10px);
-  background: #fce4dc;
-  box-shadow: 0 12px 25px #d9a99b40;
-}
-
-.value-card .icon {
-  font-size: 45px;
-  margin-bottom: 15px;
-}
-
-.value-card h3 {
-  font-size: 1.5rem;
-  color: #bc8177;
-  margin-bottom: 15px;
-}
-
-.value-card p {
-  line-height: 1.8;
-}
-
-/* MENU */
-
-.menu-section {
-  background: linear-gradient(135deg, #fbe1dc, #fff4e9);
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 25px;
-}
-
-.menu-card {
-  background: #fffaf2;
-  border: 2px solid #e9b9ad;
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 8px 20px #9b69551a;
-  transition: .3s;
-}
-
-.menu-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px #9b695533;
-}
-
-.menu-card h3 {
-  text-align: center;
-  color: #bd8277;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  border-bottom: 2px dashed #e9b9ad;
-  padding-bottom: 12px;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 7px 0;
-  border-bottom: 1px dotted #e7d2c4;
-  font-size: .87rem;
-  font-weight: 600;
-}
-
-.menu-item span:last-child {
-  font-weight: 800;
-  color: #bd8277;
-  white-space: nowrap;
-}
-
-.menu-note {
-  text-align: center;
-  margin-top: 35px;
-  font-weight: 700;
-  color: #a47a68;
-}
-
-/* FRASE */
-
-.banner {
-  text-align: center;
-  background: #eac1b7;
-  color: white;
-  padding: 65px 20px;
-}
-
-.banner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.banner p {
-  font-size: 1.2rem;
-  margin-top: 15px;
-}
-
-/* EMPRENDEDORES */
-
-.socios {
-  background: #fff8ed;
-  text-align: center;
-}
-
-.socios-box {
-  background: #fff0ed;
-  padding: 45px 25px;
-  border: 2px solid #edc3b8;
-  border-radius: 30px;
-  max-width: 850px;
-  margin: auto;
-}
-
-.socios-box .cat {
-  font-size: 75px;
-  margin-bottom: 15px;
-}
-
-.socios-box p {
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-/* INSTAGRAM */
-
-.instagram {
-  background: linear-gradient(135deg, #f4d4cb, #fff0e6);
-  text-align: center;
-}
-
-.instagram-card {
-  background: #fffaf2;
-  border-radius: 30px;
-  padding: 40px 20px;
-  max-width: 650px;
-  margin: auto;
-  border: 2px solid #edc3b8;
-}
-
-.instagram-card .icon {
-  font-size: 55px;
-}
-
-.instagram-card h3 {
-  font-size: 1.7rem;
-  margin: 15px 0;
-}
-
-.instagram-card p {
-  margin-bottom: 25px;
-}
-
-/* FOOTER */
-
-footer {
-  background: #765344;
-  color: #fff4e9;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-footer h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-}
-
-footer p {
-  margin: 12px 0;
-}
-
-footer a {
-  color: #f7c6c3;
-  font-weight: 800;
-}
-
-/* ANIMACIONES */
-
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes girar {
-  from { transform: rotate(-8deg); }
-  to { transform: rotate(8deg); }
-}
-
-@media(max-width: 768px) {
-  .navbar {
-    justify-content: center;
-    gap: 15px;
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --pink: #f8e1f4;
+    --pink-deep: #f4b6e8;
+    --mint: #d1f7e3;
+    --mint-deep: #a8e6cf;
+    --lavanda: #e3d9ff;
+    --lavanda-deep: #c9b4ff;
+    --durazno: #fde8cf;
+    --durazno-deep: #f7c9a0;
+    --texto: #5c4033;
+    --texto-suave: #8a6b56;
+    --fondo: #fff7fb;
+    --sombra: rgba(200, 150, 200, 0.2);
   }
 
-  nav {
-    justify-content: center;
-    gap: 13px;
-    font-size: .85rem;
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
 
+  h1, h2, h3 { font-family: 'Fredoka', sans-serif; }
+  a { text-decoration: none; color: inherit; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* Fondo animado con burbujas */
+  .fondo-burbujas {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .burbuja {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(2px);
+    animation: flotar linear infinite;
+  }
+  @keyframes flotar {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  }
+
+  header {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--pink-deep);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 14px; }
+  .logo img { height: 70px; width: 70px; border-radius: 50%; object-fit: cover; }
+  .logo-text { font-family: 'Fredoka', sans-serif; font-size: 1.7rem; font-weight: 700; background: linear-gradient(135deg, var(--pink-deep), var(--durazno-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  nav { margin-left: auto; display: none; gap: 26px; font-weight: 600; font-size: 1rem; }
+  @media (min-width: 768px) { nav { display: flex; } }
+  nav a:hover { color: var(--pink-deep); }
+
+  .sociales { display: flex; gap: 12px; }
+  .social {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink-deep), var(--durazno-deep));
+    color: #fff; font-size: 1.1rem; display: grid; place-items: center;
+    transition: transform 0.25s;
+  }
+  .social:hover { transform: scale(1.15) rotate(8deg); }
+
+  /* Hero */
   .hero {
-    min-height: 500px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--mint) 50%, var(--lavanda) 100%);
+    padding: 110px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; top: -10%; left: -10%;
+    width: 120%; height: 120%;
+    background: radial-gradient(circle at 30% 30%, var(--durazno-deep), transparent 40%);
+    opacity: 0.25;
+    z-index: 0;
+  }
+  .hero .container { position: relative; z-index: 2; }
+  .slogan {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--texto);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--pink-deep), var(--durazno-deep));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 15px var(--sombra);
+    animation: pulso 2.5s ease-in-out infinite;
+  }
+  @keyframes pulso {
+    0%, 100% { transform: scale(1); box-shadow: 0 4px 15px var(--sombra); }
+    50% { transform: scale(1.04); box-shadow: 0 8px 25px rgba(200, 150, 200, 0.4); }
+  }
+  .hero h1 { font-size: 3.8rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.05; letter-spacing: -1px; }
+  .hero p { font-size: 1.2rem; color: var(--texto-suave); max-width: 700px; margin: 0 auto 2rem; font-weight: 500; }
+  .btn {
+    background: linear-gradient(135deg, var(--pink-deep), var(--durazno-deep));
+    color: #fff; padding: 15px 36px; border-radius: 50px;
+    font-weight: 700; font-size: 1rem; display: inline-block;
+    transition: all 0.3s; box-shadow: 0 6px 20px rgba(244, 182, 232, 0.4);
+  }
+  .btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 28px rgba(247, 201, 160, 0.5); }
+
+  /* Secciones */
+  .seccion { padding: 90px 0; }
+  .section-title { text-align: center; font-size: 2.6rem; margin-bottom: 4rem; color: var(--texto); position: relative; }
+  .section-title::after {
+    content: ""; position: absolute; bottom: -12px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 8px; background: var(--durazno-deep);
+    border-radius: 8px;
   }
 
-  section {
-    padding: 60px 0;
+  /* Valores */
+  .values { background: #fff; }
+  .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .value-card {
+    background: linear-gradient(145deg, #fff, #fbf1f8);
+    padding: 36px 26px; border-radius: 24px;
+    text-align: center; border: 1px solid var(--pink-deep);
+    transition: all 0.35s; box-shadow: 0 8px 24px var(--sombra);
+    opacity: 0; transform: translateY(30px);
+    animation: subir 0.7s ease forwards;
   }
-
-  .section-title {
-    font-size: 2.2rem;
+  @keyframes subir { to { opacity: 1; transform: translateY(0); } }
+  .value-card:nth-child(2) { animation-delay: 0.15s; }
+  .value-card:nth-child(3) { animation-delay: 0.3s; }
+  .value-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--durazno-deep);
+    box-shadow: 0 14px 32px rgba(247, 201, 160, 0.35);
   }
+  .value-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--pink-deep); }
+  .value-card p { color: var(--texto-suave); line-height: 1.75; }
 
+  /* MENU */
+  .menu { background: var(--fondo); }
   .menu-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
   }
-}
+  .menu-card {
+    background: #fff;
+    border-radius: 26px;
+    overflow: hidden;
+    border: 1px solid var(--pink-deep);
+    box-shadow: 0 10px 28px var(--sombra);
+    transition: all 0.4s;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: subir 0.7s ease forwards;
+  }
+  .menu-card:nth-child(2) { animation-delay: 0.12s; }
+  .menu-card:nth-child(3) { animation-delay: 0.24s; }
+  .menu-card:nth-child(4) { animation-delay: 0.36s; }
+  .menu-card:nth-child(5) { animation-delay: 0.48s; }
+  .menu-card:nth-child(6) { animation-delay: 0.6s; }
+  .menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(247, 201, 160, 0.4);
+    border-color: var(--durazno-deep);
+  }
+  .menu-img {
+    width: 100%; height: 190px; object-fit: cover;
+    background: var(--durazno);
+  }
+  .menu-info { padding: 20px 18px; }
+  .menu-categoria {
+    font-size: 0.8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--durazno-deep); margin-bottom: 6px;
+  }
+  .menu-card h3 { font-size: 1.25rem; margin-bottom: 4px; color: var(--texto); }
+  .menu-card p { font-size: 0.92rem; color: var(--texto-suave); margin-bottom: 10px; line-height: 1.5; }
+  .menu-precio { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--pink-deep); }
 
+  /* Socios */
+  .socios { background: #fff; border-top: 1px solid var(--pink-deep); }
+  .socios-img { width: 100%; max-width: 850px; margin: 0 auto; display: block; border-radius: 24px; box-shadow: 0 22px 48px var(--sombra); border: 4px solid #fff; }
+
+  footer {
+    background: linear-gradient(135deg, var(--pink-deep), var(--durazno-deep));
+    color: #fff; padding: 70px 0; text-align: center;
+  }
+  footer p { opacity: 0.9; font-size: 0.95rem; }
+  .footer-redes { margin-top: 14px; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.4rem; }
+    .hero { padding: 70px 0; }
+    .seccion, .hero, .socios { padding: 60px 0; }
+  }
 </style>
 </head>
-
 <body>
 
-<header>
-  <div class="container navbar">
-    <a href="#inicio" class="logo">
-      🐾 CATNP <span>COFFEE</span>
-      <small>CAFÉ · AMOR · GATITOS</small>
-    </a>
+<div class="fondo-burbujas" id="burbujas"></div>
 
+<header>
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="logo">
+      <img src="Logo.png" alt="CATNP COFFEE Logo">
+      <div class="logo-text">CATNP COFFEE</div>
+    </div>
     <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#identidad">Nosotros</a>
+      <a href="#mision">Misión</a>
+      <a href="#vision">Visión</a>
       <a href="#menu">Menú</a>
-      <a href="#socios">Equipo</a>
-      <a href="#instagram">Instagram</a>
+      <a href="#socios">Socios</a>
     </nav>
+    <div class="sociales">
+      <a href="https://instagram.com/catnip_caffe" target="_blank" rel="noopener" class="social" title="Instagram @catnip_caffe">@</a>
+    </div>
   </div>
 </header>
 
-<!-- PORTADA -->
-
-<section class="hero" id="inicio">
-
-  <div class="decor one">☕</div>
-  <div class="decor two">🐾</div>
-  <div class="decor three">🌷</div>
-
-  <div class="hero-content">
-
-    <div class="hero-cat">🐱</div>
-
-    <h1>CATNP <span>COFFEE</span></h1>
-
-    <p>
-      Un espacio lleno de aroma, dulzura y amor por los pequeños detalles.
-      Descubre el placer de disfrutar un buen café.
-    </p>
-
-    <div class="slogan">
-      "Donde cada café salva una vida."
-    </div>
-
-    <a href="#menu" class="btn">☕ Descubre nuestro menú</a>
-
+<section class="hero">
+  <div class="container">
+    <div class="slogan">💖 Donde cada café salva una vida.</div>
+    <h1>CATNP COFFEE</h1>
+    <p>Café de especialidad con propósito. Granos seleccionados, colores pastel y un sabor que hace latir el corazón.</p>
+    <a href="#menu" class="btn">Ver el menú</a>
   </div>
 </section>
 
-<!-- IDENTIDAD -->
-
-<section class="values" id="identidad">
-
+<section class="values seccion" id="mision">
   <div class="container">
-
-    <h2 class="section-title">Nuestra esencia 🌷</h2>
-
-    <p class="section-subtitle">
-      Más que una cafetería, somos una experiencia llena de amor.
-    </p>
-
+    <h2 class="section-title">Nuestra Identidad</h2>
     <div class="values-grid">
-
       <div class="value-card">
-        <div class="icon">☕</div>
         <h3>Misión</h3>
-        <p>
-          Ofrecer café de especialidad de la más alta calidad,
-          creando experiencias memorables que conecten a las
-          personas con el sabor auténtico y el arte de la preparación.
-        </p>
+        <p>Ofrecer café de especialidad de la más alta calidad, creando experiencias memorables que conecten a las personas con el sabor auténtico y el arte de la preparación.</p>
       </div>
-
       <div class="value-card">
-        <div class="icon">🌸</div>
         <h3>Visión</h3>
-        <p>
-          Ser la cafetería referente en la región, reconocida
-          por su excelencia en servicio, sostenibilidad y por ser
-          el punto de encuentro favorito de los amantes del café.
-        </p>
+        <p>Ser la cafetería referente en la región, reconocida por su excelencia en servicio, sostenibilidad y por ser el punto de encuentro favorito de los amantes del café.</p>
       </div>
-
       <div class="value-card">
-        <div class="icon">🐾</div>
         <h3>Objetivo</h3>
-        <p>
-          Consolidar una marca de café comprometida con el comercio
-          justo, capacitando a baristas apasionados y entregando
-          productos que superen las expectativas de nuestros clientes.
-        </p>
+        <p>Consolidar una marca de café comprometida con el comercio justo, capacitando a baristas apasionados y entregando productos que superen las expectativas de nuestros clientes.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- MENU -->
-
-<section class="menu-section" id="menu">
-
+<section class="menu seccion" id="menu">
   <div class="container">
-
-    <h2 class="section-title">Nuestro Menú 🍰</h2>
-
-    <p class="section-subtitle">
-      Preparado con amor, servido con una sonrisa y mucho sabor.
-    </p>
-
+    <h2 class="section-title">Nuestro Menú</h2>
     <div class="menu-grid">
-
-      <!-- BEBIDAS CALIENTES -->
-
       <div class="menu-card">
-        <h3>☕ Bebidas calientes</h3>
-
-        <div class="menu-item"><span>Espresso</span><span>$6K</span></div>
-        <div class="menu-item"><span>Americano</span><span>$8K</span></div>
-        <div class="menu-item"><span>Capuccino</span><span>$11K</span></div>
-        <div class="menu-item"><span>Latte</span><span>$12K</span></div>
-        <div class="menu-item"><span>Latte de vainilla o caramelo</span><span>$13K</span></div>
-        <div class="menu-item"><span>Flat white</span><span>$13K</span></div>
-        <div class="menu-item"><span>Mocaccino</span><span>$14K</span></div>
-        <div class="menu-item"><span>Chocolate caliente</span><span>$11K</span></div>
-        <div class="menu-item"><span>Té negro, verde o de chai</span><span>$8K</span></div>
-        <div class="menu-item"><span>Aromática de hierbas</span><span>$7K</span></div>
-        <div class="menu-item"><span>Aromática de frutas</span><span>$8K</span></div>
-        <div class="menu-item"><span>Affogato</span><span>$12.5K</span></div>
-        <div class="menu-item"><span>Matcha latte</span><span>$15K</span></div>
+        <img src="ESSPRESO.png" alt="Espresso Clásico" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Espresso</span>
+          <h3>Espresso Clásico</h3>
+          <p>Sabor intenso y aromático, preparado con granos de especialidad.</p>
+          <div class="menu-precio">$3.500</div>
+        </div>
       </div>
-
-      <!-- JUGOS -->
-
       <div class="menu-card">
-        <h3>🍓 Jugos</h3>
-
-        <div class="menu-item"><span>En agua</span><span>$12K</span></div>
-        <div class="menu-item"><span>En leche</span><span>$14K</span></div>
-        <div class="menu-item"><span>Maracuyá</span><span></span></div>
-        <div class="menu-item"><span>Lulo</span><span></span></div>
-        <div class="menu-item"><span>Mora</span><span></span></div>
-        <div class="menu-item"><span>Mango</span><span></span></div>
-        <div class="menu-item"><span>Naranja</span><span></span></div>
-        <div class="menu-item"><span>Mandarina</span><span></span></div>
-        <div class="menu-item"><span>Limonada</span><span>$9K</span></div>
-        <div class="menu-item"><span>Limonada de coco</span><span>$12K</span></div>
-        <div class="menu-item"><span>Cerezada</span><span>$12K</span></div>
+        <img src="CAPPUCCINO.png" alt="Cappuccino Pastel" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Cappuccino</span>
+          <h3>Cappuccino Pastel</h3>
+          <p>Espresso con leche vaporizada y espuma cremosa, toque de canela.</p>
+          <div class="menu-precio">$4.200</div>
+        </div>
       </div>
-
-      <!-- GASEOSAS -->
-
       <div class="menu-card">
-        <h3>🥤 Gaseosas y bebidas</h3>
-
-        <div class="menu-item"><span>Gaseosa pequeña</span><span>$5K</span></div>
-        <div class="menu-item"><span>Gaseosa personal</span><span>$7K</span></div>
-        <div class="menu-item"><span>Gaseosa 1.5L</span><span>$12K</span></div>
-        <div class="menu-item"><span>Gaseosa 3L</span><span>$16K</span></div>
-        <div class="menu-item"><span>Agua</span><span>$5K</span></div>
-        <div class="menu-item"><span>Agua con gas</span><span>$6K</span></div>
-        <div class="menu-item"><span>Agua saborizada</span><span>$8K</span></div>
-        <div class="menu-item"><span>Bebida energizante</span><span>$12K</span></div>
+        <img src="LATTE.png" alt="Latte Vainilla" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Latte</span>
+          <h3>Latte Vainilla</h3>
+          <p>Suave y dulce, con un toque de vainilla natural y arte en espuma.</p>
+          <div class="menu-precio">$4.500</div>
+        </div>
       </div>
-
-      <!-- DESAYUNOS -->
-
       <div class="menu-card">
-        <h3>🍳 Desayunos</h3>
-
-        <div class="menu-item"><span>Calentado</span><span>$27K</span></div>
-        <div class="menu-item"><span>Huevos pericos</span><span>$20K</span></div>
-        <div class="menu-item"><span>Omelette de jamón y queso</span><span>$23K</span></div>
-        <div class="menu-item"><span>Arepa con queso</span><span>$10.5K</span></div>
-        <div class="menu-item"><span>Tamal con chocolate</span><span>$23K</span></div>
-        <div class="menu-item"><span>Changua</span><span>$16K</span></div>
-        <div class="menu-item"><span>Bowl de yogur y granola</span><span>$18K</span></div>
-        <div class="menu-item"><span>Tostadas francesas</span><span>$21K</span></div>
-        <div class="menu-item"><span>Pancakes</span><span>$20K</span></div>
-        <div class="menu-item"><span>Waffle con frutas</span><span>$22K</span></div>
-        <div class="menu-item"><span>Huevos benedictinos</span><span>$29K</span></div>
-        <div class="menu-item"><span>Tostadas de aguacate</span><span>$25K</span></div>
-        <div class="menu-item"><span>Shakshuka</span><span>$27K</span></div>
-        <div class="menu-item"><span>Brunch de la casa</span><span>$35K</span></div>
+        <img src="AMERICANO.png" alt="Americano Frío" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Americano</span>
+          <h3>Americano Frío</h3>
+          <p>Refrescante y equilibrado, ideal para acompañar cualquier momento.</p>
+          <div class="menu-precio">$3.800</div>
+        </div>
       </div>
-
-      <!-- SANDWICHES -->
-
       <div class="menu-card">
-        <h3>🥪 Sándwiches</h3>
-
-        <div class="menu-item"><span>Sándwich de pollo</span><span>$23K</span></div>
-        <div class="menu-item"><span>Sándwich de jamón y queso</span><span>$19K</span></div>
-        <div class="menu-item"><span>Sándwich de atún</span><span>$21K</span></div>
-        <div class="menu-item"><span>Sándwich de pavo y aguacate</span><span>$25K</span></div>
-        <div class="menu-item"><span>Sándwich cubano</span><span>$28K</span></div>
-        <div class="menu-item"><span>Sándwich vegetariano</span><span>$22K</span></div>
-        <div class="menu-item"><span>Sándwich de roast beef</span><span>$29K</span></div>
+        <img src="CHOCOLATE.png" alt="Mocha Chocolate" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Mocha</span>
+          <h3>Mocha Chocolate</h3>
+          <p>La combinación perfecta de café y chocolate con crema batida.</p>
+          <div class="menu-precio">$4.800</div>
+        </div>
       </div>
-
-      <!-- PANADERIA -->
-
       <div class="menu-card">
-        <h3>🥐 Panadería</h3>
-
-        <div class="menu-item"><span>Croissant clásico de mantequilla</span><span>$10K</span></div>
-        <div class="menu-item"><span>Croissant de jamón y queso</span><span>$15K</span></div>
-        <div class="menu-item"><span>Pain au chocolat</span><span>$12K</span></div>
-        <div class="menu-item"><span>Pan de queso artesanal</span><span>$8.5K</span></div>
-        <div class="menu-item"><span>Roll de canela con glaseado</span><span>$11.5K</span></div>
-        <div class="menu-item"><span>Bagel artesanal con queso crema</span><span>$13K</span></div>
-        <div class="menu-item"><span>Torta de zanahoria con nueces</span><span>$14K</span></div>
-        <div class="menu-item"><span>Torta de chocolate belga</span><span>$14K</span></div>
-        <div class="menu-item"><span>Torta de vainilla con frutos rojos</span><span>$15K</span></div>
-        <div class="menu-item"><span>Pastel de tres leches</span><span>$12K</span></div>
-        <div class="menu-item"><span>Cheesecake de maracuyá</span><span>$15K</span></div>
-        <div class="menu-item"><span>Torta entera por encargo</span><span>$120K</span></div>
+        <img src="CARAMELO.png" alt="Frappé de Caramelo" class="menu-img">
+        <div class="menu-info">
+          <span class="menu-categoria">Frappé</span>
+          <h3>Frappé de Caramelo</h3>
+          <p>Batido helado de café con caramelo, crema y mucho sabor.</p>
+          <div class="menu-precio">$5.200</div>
+        </div>
       </div>
-
-      <!-- POSTRES -->
-
-      <div class="menu-card">
-        <h3>🍰 Postres</h3>
-
-        <div class="menu-item"><span>Brownie</span><span>$10K</span></div>
-        <div class="menu-item"><span>Galleta de avena y pasas</span><span>$8K</span></div>
-        <div class="menu-item"><span>Galleta de chispas de chocolate</span><span>$8K</span></div>
-        <div class="menu-item"><span>Flan de caramelo</span><span>$11K</span></div>
-        <div class="menu-item"><span>Mousse de chocolate de limón</span><span>$12K</span></div>
-        <div class="menu-item"><span>3 unidades de macarons</span><span>$16K</span></div>
-        <div class="menu-item"><span>Helado</span><span>$11K</span></div>
-        <div class="menu-item"><span>Tiramisú</span><span>$15K</span></div>
-      </div>
-
-    </div>
-
-    <p class="menu-note">
-      🐱 Cada producto está preparado con mucho amor. ¡Gracias por visitarnos!
-    </p>
-
-  </div>
-</section>
-
-<!-- ESLOGAN -->
-
-<section class="banner">
-  <div class="container">
-    <h2>🐾 "Donde cada café salva una vida."</h2>
-    <p>
-      Cada taza representa una oportunidad para compartir,
-      disfrutar y ayudar.
-    </p>
-  </div>
-</section>
-
-<!-- SOCIOS -->
-
-<section class="socios" id="socios">
-
-  <div class="container">
-
-    <h2 class="section-title">Nuestro equipo 🐱</h2>
-
-    <p class="section-subtitle">
-      Detrás de cada taza, hay un equipo apasionado por lo que hace.
-    </p>
-
-    <div class="socios-box">
-
-      <div class="cat">🐈☕</div>
-
-      <h2>Grupo de emprendedores</h2>
-
-      <p>
-        Somos un equipo de emprendedores que comparte una pasión:
-        crear un lugar especial donde el café, la amistad y el amor
-        por los animales se encuentren.
-      </p>
-
-      <p style="margin-top:15px">
-        En CATNP COFFEE creemos que los pequeños gestos pueden
-        generar grandes cambios.
-      </p>
-
     </div>
   </div>
 </section>
 
-<!-- INSTAGRAM -->
-
-<section class="instagram" id="instagram">
-
+<section class="socios seccion" id="socios">
   <div class="container">
-
-    <div class="instagram-card">
-
-      <div class="icon">📸</div>
-
-      <h2 class="section-title">¡Síguenos!</h2>
-
-      <h3>@catnip_caffe</h3>
-
-      <p>
-        Conoce nuestras bebidas, postres, novedades
-        y todo el amor que ponemos en cada taza.
-      </p>
-
-      <a
-        href="https://www.instagram.com/catnip_caffe/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn">
-        💗 Visitar Instagram
-      </a>
-
-    </div>
-
+    <h2 class="section-title">Grupo de Emprendedores</h2>
+    <img src="Socios.png" alt="Nuestros socios fundadores" class="socios-img">
+    <div style="text-align:center; margin-top:2rem; font-size:1.2rem; color:var(--texto-suave); font-weight:600;">Detrás de cada taza, hay un equipo apasionado por lo que hace.</div>
   </div>
 </section>
-
-<!-- FOOTER -->
 
 <footer>
-
-  <h2>🐾 CATNP COFFEE ☕</h2>
-
-  <p>Donde cada café salva una vida.</p>
-
-  <p>
-    Instagram:
-    <a href="https://www.instagram.com/catnip_caffe/"
-       target="_blank"
-       rel="noopener noreferrer">
-       @catnip_caffe
-    </a>
-  </p>
-
-  <p>© 2026 CATNP COFFEE. Todos los derechos reservados.</p>
-
-  <p>Hecho con amor, café y muchas patitas. 💗</p>
-
+  <div class="container">
+    <p style="font-size:1.4rem; margin-bottom:14px;">CATNP COFFEE ☕</p>
+    <p>💖 Donde cada café salva una vida.</p>
+    <div class="footer-redes">
+      <a href="https://instagram.com/catnip_caffe" target="_blank" rel="noopener" class="social" style="margin:0 6px;">@</a>
+      <span style="opacity:0.8;">Síguenos en Instagram: <strong>@catnip_caffe</strong></span>
+    </div>
+    <p style="margin-top:18px; opacity:0.7; font-size:0.85rem;">© 2026 CATNP COFFEE. Todos los derechos reservados.</p>
+  </div>
 </footer>
+
+<script>
+  // Generar burbujas animadas de fondo
+  const contenedor = document.getElementById('burbujas');
+  const colores = ['#f4b6e8', '#a8e6cf', '#c9b4ff', '#f7c9a0'];
+  for (let i = 0; i < 18; i++) {
+    const b = document.createElement('div');
+    b.className = 'burbuja';
+    const tam = Math.random() * 50 + 20;
+    b.style.width = tam + 'px';
+    b.style.height = tam + 'px';
+    b.style.left = Math.random() * 100 + 'vw';
+    b.style.top = Math.random() * 100 + 'vh';
+    b.style.background = colores[Math.floor(Math.random() * colores.length)];
+    b.style.animationDuration = (Math.random() * 6 + 4) + 's';
+    b.style.animationDelay = (Math.random() * 5) + 's';
+    contenedor.appendChild(b);
+  }
+</script>
 
 </body>
 </html>
